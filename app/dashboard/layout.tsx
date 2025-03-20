@@ -37,27 +37,25 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SidebarProvider>
-          <AppSidebar />
-          <SidebarInset>
-            <header className="flex h-14 shrink-0 items-center gap-2">
-              <div className="flex flex-1 items-center gap-2 px-3">
-                <SidebarTrigger />
-                <Separator
-                  orientation="vertical"
-                  className="mr-2 data-[orientation=vertical]:h-4"
-                />
-                <AppBreadcrumbs />
-              </div>
-              <div className="ml-auto px-3">
-                <NavActions />
-              </div>
-            </header>
-            <div className="flex flex-1 flex-col gap-4 px-4 py-10">
-              <div className="bg-muted/50 mx-auto h-24 w-full max-w-3xl rounded-xl" />
-              <div className="bg-muted/50 mx-auto h-full w-full max-w-3xl rounded-xl" />
-            </div>
-          </SidebarInset>
-          {children}
+          <div className="flex h-screen w-screen">
+            <AppSidebar />
+            <SidebarInset className="flex-1 flex flex-col">
+              <header className="flex h-14 shrink-0 items-center gap-2">
+                <div className="flex flex-1 items-center gap-2 px-3">
+                  <SidebarTrigger />
+                  <Separator
+                    orientation="vertical"
+                    className="mr-2 data-[orientation=vertical]:h-4"
+                  />
+                  <AppBreadcrumbs />
+                </div>
+                <div className="ml-auto px-3">
+                  <NavActions />
+                </div>
+              </header>
+              <main className="flex-1 overflow-auto">{children}</main>
+            </SidebarInset>
+          </div>
         </SidebarProvider>
       </body>
     </html>
