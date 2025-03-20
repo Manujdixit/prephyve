@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { Card } from "./ui/card";
+import Spline from "@splinetool/react-spline";
+import SplinePet from "./spline-pet";
 
 type PetState = "happy" | "neutral" | "hungry";
 type PetLevel = 1 | 2 | 3;
@@ -46,7 +48,16 @@ export function VirtualPet() {
   };
 
   const getPetAppearance = () => {
-    const baseStyle = "w-24 h-24 flex items-center justify-center text-4xl";
+    const baseStyle = "w-80 h-80 flex items-center justify-center text-4xl";
+
+    // Using Spline model instead of emojis
+    return (
+      <div className={baseStyle}>
+        <Spline scene="https://prod.spline.design/pqm9UtY4qH61PPUR/scene.splinecode" />{" "}
+      </div>
+    );
+
+    /* Original emoji-based appearance
     switch (stats.level) {
       case 1:
         return <div className={baseStyle}>🥚</div>;
@@ -55,6 +66,7 @@ export function VirtualPet() {
       case 3:
         return <div className={baseStyle}>🐥</div>;
     }
+    */
   };
 
   return (

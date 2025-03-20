@@ -86,7 +86,12 @@ export function TestDashboard() {
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Score</span>
-                    <span className="font-semibold">{test.score}%</span>
+                    <Link
+                      href={`/dashboard/tests/${test.id}/results`}
+                      className="font-semibold hover:text-primary transition-colors"
+                    >
+                      {test.score}%
+                    </Link>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Questions</span>
