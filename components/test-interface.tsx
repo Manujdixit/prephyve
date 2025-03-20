@@ -307,6 +307,7 @@ export function TestInterface({
                     "bg-orange-100 hover:bg-orange-200 text-orange-700 border-orange-400",
                   isVisited(q.id) &&
                     !isAnswered(q.id) &&
+                    !isMarkedForReview(q.id) &&
                     "bg-red-100 hover:bg-red-200 text-red-700 border-red-400"
                 )}
               >

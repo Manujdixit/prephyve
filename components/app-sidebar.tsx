@@ -27,7 +27,6 @@ const data = {
       title: "Home",
       url: "/dashboard",
       icon: Home,
-      isActive: true,
     },
     {
       title: "Tests",
