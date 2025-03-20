@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Cat, Star } from "lucide-react";
+import { Cat } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -9,15 +9,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-} from "@/components/ui/sidebar";
+import { Sidebar, SidebarContent } from "@/components/ui/sidebar";
 import { VirtualPet } from "./virtual-pet";
 
 export function NavActions() {
@@ -29,12 +21,6 @@ export function NavActions() {
 
   return (
     <div className="flex items-center gap-2 text-sm">
-      <div className="text-muted-foreground hidden font-medium md:inline-block">
-        Edit Oct 08
-      </div>
-      <Button variant="ghost" size="icon" className="h-7 w-7">
-        <Star />
-      </Button>
       <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger asChild>
           <Button
@@ -51,7 +37,7 @@ export function NavActions() {
         >
           <Sidebar collapsible="none" className="bg-transparent">
             <SidebarContent>
-              <div className="flex justify-center mb-4">
+              <div className="flex justify-center">
                 <VirtualPet />
               </div>
             </SidebarContent>
